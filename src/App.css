@@ -1,0 +1,22 @@
+.app-container {
+  max-width: 428px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #0d0e0d;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 428px) {
+  .app-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 429px) {
+  .app-container {
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+  }
+}
+
