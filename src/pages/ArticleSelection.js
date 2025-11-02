@@ -23,7 +23,7 @@ function ArticleSelection() {
             <div className="article-title">{article.title}</div>
             <div className="article-source">{article.source}</div>
             <div className="article-thumbnail"> 
-              <img src={article.image} alt={article.title} />
+              <img src={`${process.env.PUBLIC_URL}${article.image}`} alt={article.title} />
             </div>
           </div>
         ))}

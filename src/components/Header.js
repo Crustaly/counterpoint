@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
   return (
     <header className="app-header">
-      <img src="/images/counterpointlogo.png" alt="Counterpoint" className="header-logo" />
+      <img src={`${process.env.PUBLIC_URL}/images/counterpointlogo.png`} alt="Counterpoint" className="header-logo" />
     </header>
   );
 }

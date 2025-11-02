@@ -190,7 +190,7 @@ function ArticleView() {
           {article.title}
         </h1>
       <div className="article-image">
-        <img src={article.image} alt={article.title} />
+        <img src={`${process.env.PUBLIC_URL}${article.image}`} alt={article.title} />
       </div>
       <div className="article-body">
         {paragraphs.map((paragraph, index) => (

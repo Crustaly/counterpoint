@@ -9,9 +9,9 @@ function LandingPage() {
     <div className="landing-page">
       <div 
         className="landing-page-map-bg"
-        style={{ backgroundImage: 'url(/images/mapyellow.png)' }}
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/mapyellow.png)` }}
       ></div>
-      <img src="/images/counterpointlogo.png" alt="Counterpoint" className="logo" />
+      <img src={`${process.env.PUBLIC_URL}/images/counterpointlogo.png`} alt="Counterpoint" className="logo" />
       <div className="button-container">
         <button 
           className="button primary-button"
