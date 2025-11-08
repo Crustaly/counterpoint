@@ -7,13 +7,21 @@ function MyMatches() {
   const navigate = useNavigate();
 
   const upcomingMatches = [
-    { id: 1, name: 'Crystal Yang', location: 'Top Hat Coffee Lounge', address: '3131 Walnut St, Philadelphia, PA 19104' },
-    { id: 2, name: 'Henry Fogel', location: 'La Colombe 100 S Independence Mall W', address: 'Philadelphia, PA' }
+    { 
+      id: 1, 
+      name: 'Crystal Yang', 
+      location: 'Top Hat Coffee Lounge', 
+      address: ['3131 Walnut St,', 'Philadelphia, PA 19104']
+    }
   ];
 
   const previousMatches = [
-    { id: 3, name: 'Sophie Beren', location: 'Starbucks Downtown', address: '123 Main St, Philadelphia, PA 19102' },
-    { id: 4, name: 'Marcus Wright', location: 'Blue Bottle Coffee', address: '456 Market St, Philadelphia, PA 19103' }
+    { 
+      id: 2, 
+      name: 'Henry Fogel', 
+      location: 'La Colombe 100 S', 
+      address: ['Independence Mall W', 'Philadelphia, PA']
+    }
   ];
 
   const handleMatchClick = (matchType, name) => {
@@ -37,14 +45,20 @@ function MyMatches() {
               className="match-card"
               onClick={() => handleMatchClick('upcoming', match.name)}
             >
-              <div className="match-image">☕</div>
+              <div className="match-image">
+                <img src={`${process.env.PUBLIC_URL}/images/cafe.jpg.png`} alt="Cafe" />
+              </div>
               <div className="match-details">
                 <div className="match-name">Conversation with {match.name}</div>
                 <div className="match-location">
                   <div className="match-location-icon"></div>
                   <span>{match.location}</span>
                 </div>
-                <div className="match-address">{match.address}</div>
+                <div className="match-address">
+                  {match.address.map((line, index) => (
+                    <div key={index}>{line}</div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -60,14 +74,20 @@ function MyMatches() {
               className="match-card"
               onClick={() => handleMatchClick('previous', match.name)}
             >
-              <div className="match-image">☕</div>
+              <div className="match-image">
+                <img src={`${process.env.PUBLIC_URL}/images/cafe.jpg.png`} alt="Cafe" />
+              </div>
               <div className="match-details">
                 <div className="match-name">Conversation with {match.name}</div>
                 <div className="match-location">
                   <div className="match-location-icon"></div>
                   <span>{match.location}</span>
                 </div>
-                <div className="match-address">{match.address}</div>
+                <div className="match-address">
+                  {match.address.map((line, index) => (
+                    <div key={index}>{line}</div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

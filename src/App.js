@@ -5,6 +5,7 @@ import ArticleSelection from './pages/ArticleSelection';
 import ArticleView from './pages/ArticleView';
 import MyMatches from './pages/MyMatches';
 import ConversationDetail from './pages/ConversationDetail';
+import Navigation from './components/Navigation';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/my-matches" element={<MyMatches />} />
           <Route path="/conversation-detail/:matchType/:name" element={<ConversationDetail />} />
         </Routes>
+        <Navigation />
       </div>
     </Router>
   );
