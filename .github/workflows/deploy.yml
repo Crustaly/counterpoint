@@ -40,6 +40,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Verify build output
+        run: |
+          ls -la build/
+          test -f build/index.html || exit 1
+          test -f build/.nojekyll || exit 1
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
